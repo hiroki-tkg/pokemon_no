@@ -8,7 +8,6 @@ for (i = 0; i < elements.length; i++) {
     if ( result.indexOf('ポケモン') != -1) {
 		var tweet = $(elements[i]).parents('li');
 		$(tweet).css('display', 'none');
-		console.log(tweet);
     }
 }
 
@@ -24,13 +23,14 @@ window.addEventListener( "scroll", function() {
 		    if ( result.indexOf('ポケモン') != -1) {
 				var tweet = $(elements[i]).parents('li');
 				$(tweet).css('display', 'none');
-				console.log(tweet);
 		    }
+
 		}
 
+		var num = $(tweet).hasClass('checked_pokemon');		
+		console.log(num);
 	}
-
-} ) ;
+});
 
 // FBポストを取得
 var fb_elements = document.getElementsByClassName("userContent");
@@ -44,7 +44,6 @@ for (i = 0; i < fb_elements.length; i++) {
 		$(post).css('display', 'none');
     }
 }
-
 
 window.addEventListener( "scroll", function() {
 	// スクロール量を取得
@@ -72,10 +71,5 @@ window.addEventListener( "scroll", function() {
 				$(post).css('display', 'none');
 		    }
 		}
-		
-
 	}
-
-} ) ;
-
-
+});
